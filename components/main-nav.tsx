@@ -1,41 +1,51 @@
+"use client"
+
 import * as React from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
 
-interface MainNavProps {
-  items?: NavItem[]
-}
+export function MainNav() {
+  const pathname = usePathname()
 
-export function MainNav({ items }: MainNavProps) {
+  const links = [
+    { href: "/dashboard", name: "Dashboard" },
+    { href: "/cards", name: "Cards" },
+    { href: "/forms", name: "Forms" },
+    { href: "/authentication", name: "Authentication" },
+    { href: "/music", name: "Music" },
+    { href: "/playground", name: "Playground" },
+    { href: "/tasks", name: "Tasks" },
+    { href: "/themes", name: "Themes" },
+  ]
+  
   return (
-    <div className="flex gap-6 md:gap-10">
-      <Link href="/" className="flex items-center space-x-2">
+    <div className="mr-4 hidden md:flex">
+      <Link href="/" className="mr-6 flex items-center space-x-2">
         <Icons.logo className="h-6 w-6" />
-        <span className="inline-block font-bold">{siteConfig.name}</span>
+        <span className="hidden font-bold sm:inline-block">
+          {siteConfig.name}
+        </span>
       </Link>
-      {items?.length ? (
-        <nav className="flex gap-6">
-          {items?.map(
-            (item, index) =>
-              item.href && (
-                <Link
-                  key={index}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center text-sm font-medium text-muted-foreground",
-                    item.disabled && "cursor-not-allowed opacity-80"
-                  )}
-                >
-                  {item.title}
-                </Link>
-              )
-          )}
-        </nav>
-      ) : null}
+      <nav className="flex items-center space-x-6 text-sm font-medium">
+        {links.map((link) => (
+          <Link
+            key={link.href}
+            href={link.href}
+            className={cn(
+              "transition-colors hover:text-foreground/80",
+              pathname?.startsWith(link.href)
+                ? "text-foreground"
+                : "text-foreground/60"
+            )}
+          >
+            {link.name}
+          </Link>
+        ))}
+      </nav>
     </div>
   )
 }

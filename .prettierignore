@@ -1,12 +1,6 @@
-cache
-.cache
-package.json
-package-lock.json
-public
-CHANGELOG.md
-.yarn
 dist
 node_modules
 .next
 build
 .contentlayer
+apps/www/pages/api/registry.json

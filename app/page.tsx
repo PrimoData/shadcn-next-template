@@ -1,39 +1,53 @@
+import Image from "next/image"
 import Link from "next/link"
+import { ArrowRightIcon } from "@radix-ui/react-icons"
 
 import { siteConfig } from "@/config/site"
-import { buttonVariants } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Icons } from "@/components/icons"
+import {
+  PageHeader,
+  PageHeaderDescription,
+  PageHeaderHeading,
+} from "@/components/page-header"
+import { buttonVariants } from "@/registry/new-york/ui/button"
+import { Separator } from "@/registry/new-york/ui/separator"
 
 export default function IndexPage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
-      <div className="flex max-w-[980px] flex-col items-start gap-2">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
-          Beautifully designed components <br className="hidden sm:inline" />
-          built with Radix UI and Tailwind CSS.
-        </h1>
-        <p className="max-w-[700px] text-lg text-muted-foreground">
-          Accessible and customizable components that you can copy and paste
-          into your apps. Free. Open Source. And Next.js 13 Ready.
-        </p>
-      </div>
-      <div className="flex gap-4">
+    <div className="container relative">
+      <PageHeader className="pb-8">
         <Link
-          href={siteConfig.links.docs}
-          target="_blank"
-          rel="noreferrer"
-          className={buttonVariants()}
+          href="/docs/changelog"
+          className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
         >
-          Documentation
+          🎉 <Separator className="mx-2 h-4" orientation="vertical" />{" "}
+          <span className="sm:hidden">Style, a new CLI and more.</span>
+          <span className="hidden sm:inline">
+            Introducing Style, a new CLI and more.
+          </span>
+          <ArrowRightIcon className="ml-1 h-4 w-4" />
         </Link>
-        <Link
-          target="_blank"
-          rel="noreferrer"
-          href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
-        >
-          GitHub
-        </Link>
-      </div>
-    </section>
+        <PageHeaderHeading>Build your component library.</PageHeaderHeading>
+        <PageHeaderDescription>
+          Beautifully designed components that you can copy and paste into your
+          apps. Accessible. Customizable. Open Source.
+        </PageHeaderDescription>
+        <div className="flex w-full items-center space-x-4 pb-8 pt-4 md:pb-10">
+          <Link href="/" className={cn(buttonVariants())}>
+            Get Started
+          </Link>
+          <Link
+            target="_blank"
+            rel="noreferrer"
+            href={siteConfig.links.github}
+            className={cn(buttonVariants({ variant: "outline" }))}
+          >
+            <Icons.gitHub className="mr-2 h-4 w-4" />
+            GitHub
+          </Link>
+        </div>
+      </PageHeader>
+    </div>
   )
 }

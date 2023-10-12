@@ -3,22 +3,23 @@
   "root": true,
   "extends": [
     "next/core-web-vitals",
+    "turbo",
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
   "plugins": ["tailwindcss"],
   "rules": {
     "@next/next/no-html-link-for-pages": "off",
-    "react/jsx-key": "off",
-    "tailwindcss/no-custom-classname": "off"
+    "tailwindcss/no-custom-classname": "off",
+    "tailwindcss/classnames-order": "error"
   },
   "settings": {
     "tailwindcss": {
-      "callees": ["cn"],
-      "config": "tailwind.config.js"
+      "callees": ["cn", "cva"],
+      "config": "tailwind.config.cjs"
     },
     "next": {
-      "rootDir": ["./"]
+      "rootDir": ["apps/*/"]
     }
   },
   "overrides": [
