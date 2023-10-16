@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 
-import { useConfig } from "@/hooks/use-config"
-import { Style } from "@/registry/styles"
+import { useConfig } from '@/hooks/use-config'
+import { Style } from '@/lib/styles'
 
 interface StyleWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
-  styleName?: Style["name"]
+  styleName?: Style['name']
 }
 
 export function StyleWrapper({ styleName, children }: StyleWrapperProps) {

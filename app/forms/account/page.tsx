@@ -1,5 +1,5 @@
-import { Separator } from "@/registry/new-york/ui/separator"
-import { AccountForm } from "./account-form"
+import { Separator } from '@/components/ui/separator'
+import { AccountForm } from './account-form'
 
 export default function SettingsAccountPage() {
   return (

@@ -1,17 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRightIcon } from "@radix-ui/react-icons"
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRightIcon } from '@radix-ui/react-icons'
 
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
+import { siteConfig } from '@/config/site'
+import { cn } from '@/lib/utils'
+import { Icons } from '@/components/icons'
 import {
   PageHeader,
   PageHeaderDescription,
   PageHeaderHeading,
-} from "@/components/page-header"
-import { buttonVariants } from "@/registry/new-york/ui/button"
-import { Separator } from "@/registry/new-york/ui/separator"
+} from '@/components/page-header'
+import { buttonVariants } from '@/components/ui/button'
+import { Separator } from '@/components/ui/separator'
 
 export default function IndexPage() {
   return (
@@ -21,7 +21,7 @@ export default function IndexPage() {
           href="/docs/changelog"
           className="inline-flex items-center rounded-lg bg-muted px-3 py-1 text-sm font-medium"
         >
-          🎉 <Separator className="mx-2 h-4" orientation="vertical" />{" "}
+          🎉 <Separator className="mx-2 h-4" orientation="vertical" />{' '}
           <span className="sm:hidden">Style, a new CLI and more.</span>
           <span className="hidden sm:inline">
             Introducing Style, a new CLI and more.
@@ -41,7 +41,7 @@ export default function IndexPage() {
             target="_blank"
             rel="noreferrer"
             href={siteConfig.links.github}
-            className={cn(buttonVariants({ variant: "outline" }))}
+            className={cn(buttonVariants({ variant: 'outline' }))}
           >
             <Icons.gitHub className="mr-2 h-4 w-4" />
             GitHub

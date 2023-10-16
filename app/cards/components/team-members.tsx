@@ -1,18 +1,14 @@
-import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { ChevronDownIcon } from '@radix-ui/react-icons'
 
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/registry/new-york/ui/avatar"
-import { Button } from "@/registry/new-york/ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card"
+} from '@/components/ui/card'
 import {
   Command,
   CommandEmpty,
@@ -20,12 +16,12 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "@/registry/new-york/ui/command"
+} from '@/components/ui/command'
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/registry/new-york/ui/popover"
+} from '@/components/ui/popover'
 
 export function DemoTeamMembers() {
   return (
@@ -51,7 +47,7 @@ export function DemoTeamMembers() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="outline" className="ml-auto">
-                Owner{" "}
+                Owner{' '}
                 <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
               </Button>
             </PopoverTrigger>
@@ -105,7 +101,7 @@ export function DemoTeamMembers() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="outline" className="ml-auto">
-                Member{" "}
+                Member{' '}
                 <ChevronDownIcon className="ml-2 h-4 w-4 text-muted-foreground" />
               </Button>
             </PopoverTrigger>

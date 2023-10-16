@@ -1,25 +1,25 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import Link, { LinkProps } from "next/link"
-import { useRouter } from "next/navigation"
-import { ViewVerticalIcon } from "@radix-ui/react-icons"
+import * as React from 'react'
+import Link, { LinkProps } from 'next/link'
+import { useRouter } from 'next/navigation'
+import { ViewVerticalIcon } from '@radix-ui/react-icons'
 
-import { docsConfig } from "@/config/docs"
-import { siteConfig } from "@/config/site"
-import { cn } from "@/lib/utils"
-import { Icons } from "@/components/icons"
-import { Button } from "@/registry/new-york/ui/button"
-import { ScrollArea } from "@/registry/new-york/ui/scroll-area"
-import { Sheet, SheetContent, SheetTrigger } from "@/registry/new-york/ui/sheet"
+import { docsConfig } from '@/config/docs'
+import { siteConfig } from '@/config/site'
+import { cn } from '@/lib/utils'
+import { Icons } from '@/components/icons'
+import { Button } from '@/components/ui/button'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 
 export function MobileNav() {
   const [open, setOpen] = React.useState(false)
 
   interface Item {
-    href?: string;
-    title: string;
-    disabled?: boolean;
+    href?: string
+    title: string
+    disabled?: boolean
   }
 
   return (
@@ -54,7 +54,7 @@ export function MobileNav() {
                   >
                     {item.title}
                   </MobileLink>
-                )
+                ),
             )}
           </div>
           <div className="flex flex-col space-y-2">

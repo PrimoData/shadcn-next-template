@@ -1,12 +1,12 @@
-"use client"
+'use client'
 
-import * as React from "react"
+import * as React from 'react'
 
-import { useConfig } from "@/hooks/use-config"
-import { ThemeWrapper } from "@/components/theme-wrapper"
-import CardsDefault from "@/registry/default/example/cards"
-import { Skeleton } from "@/registry/default/ui/skeleton"
-import CardsNewYork from "@/registry/new-york/example/cards"
+import { useConfig } from '@/hooks/use-config'
+import { ThemeWrapper } from '@/components/theme-wrapper'
+import CardsDefault from '@/components/ui/cards'
+import { Skeleton } from '@/components/ui/skeleton'
+import CardsNewYork from '@/components/ui/cards'
 
 export function ThemesTabs() {
   const [mounted, setMounted] = React.useState(false)
@@ -64,8 +64,8 @@ export function ThemesTabs() {
         </div>
       ) : (
         <ThemeWrapper>
-          {config.style === "new-york" && <CardsNewYork />}
-          {config.style === "default" && <CardsDefault />}
+          {config.style === 'new-york' && <CardsNewYork />}
+          {config.style === 'default' && <CardsDefault />}
         </ThemeWrapper>
       )}
     </div>

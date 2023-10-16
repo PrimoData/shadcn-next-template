@@ -1,20 +1,20 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { useRouter } from "next/navigation"
-import { DialogProps } from "@radix-ui/react-alert-dialog"
+import * as React from 'react'
+import { useRouter } from 'next/navigation'
+import { DialogProps } from '@radix-ui/react-alert-dialog'
 import {
   CircleIcon,
   FileIcon,
   LaptopIcon,
   MoonIcon,
   SunIcon,
-} from "@radix-ui/react-icons"
-import { useTheme } from "next-themes"
+} from '@radix-ui/react-icons'
+import { useTheme } from 'next-themes'
 
-import { docsConfig } from "@/config/docs"
-import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
+import { docsConfig } from '@/config/docs'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 import {
   CommandDialog,
   CommandEmpty,
@@ -23,7 +23,7 @@ import {
   CommandItem,
   CommandList,
   CommandSeparator,
-} from "@/registry/new-york/ui/command"
+} from '@/components/ui/command'
 
 export function CommandMenu({ ...props }: DialogProps) {
   const router = useRouter()
@@ -32,14 +32,14 @@ export function CommandMenu({ ...props }: DialogProps) {
 
   React.useEffect(() => {
     const down = (e: KeyboardEvent) => {
-      if (e.key === "k" && (e.metaKey || e.ctrlKey)) {
+      if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
         e.preventDefault()
         setOpen((open) => !open)
       }
     }
 
-    document.addEventListener("keydown", down)
-    return () => document.removeEventListener("keydown", down)
+    document.addEventListener('keydown', down)
+    return () => document.removeEventListener('keydown', down)
   }, [])
 
   const runCommand = React.useCallback((command: () => unknown) => {
@@ -52,7 +52,7 @@ export function CommandMenu({ ...props }: DialogProps) {
       <Button
         variant="outline"
         className={cn(
-          "relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64"
+          'relative w-full justify-start text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64',
         )}
         onClick={() => setOpen(true)}
         {...props}
@@ -103,15 +103,15 @@ export function CommandMenu({ ...props }: DialogProps) {
           ))}
           <CommandSeparator />
           <CommandGroup heading="Theme">
-            <CommandItem onSelect={() => runCommand(() => setTheme("light"))}>
+            <CommandItem onSelect={() => runCommand(() => setTheme('light'))}>
               <SunIcon className="mr-2 h-4 w-4" />
               Light
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme("dark"))}>
+            <CommandItem onSelect={() => runCommand(() => setTheme('dark'))}>
               <MoonIcon className="mr-2 h-4 w-4" />
               Dark
             </CommandItem>
-            <CommandItem onSelect={() => runCommand(() => setTheme("system"))}>
+            <CommandItem onSelect={() => runCommand(() => setTheme('system'))}>
               <LaptopIcon className="mr-2 h-4 w-4" />
               System
             </CommandItem>

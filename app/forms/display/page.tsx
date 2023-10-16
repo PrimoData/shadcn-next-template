@@ -1,5 +1,5 @@
-import { Separator } from "@/registry/new-york/ui/separator"
-import { DisplayForm } from "./display-form"
+import { Separator } from '@/components/ui/separator'
+import { DisplayForm } from './display-form'
 
 export default function SettingsDisplayPage() {
   return (

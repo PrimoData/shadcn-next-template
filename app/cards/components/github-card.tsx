@@ -3,16 +3,16 @@ import {
   CircleIcon,
   PlusIcon,
   StarIcon,
-} from "@radix-ui/react-icons"
+} from '@radix-ui/react-icons'
 
-import { Button } from "@/registry/new-york/ui/button"
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "@/registry/new-york/ui/card"
+} from '@/components/ui/card'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -21,8 +21,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
-import { Separator } from "@/registry/new-york/ui/separator"
+} from '@/components/ui/dropdown-menu'
+import { Separator } from '@/components/ui/separator'
 
 export function DemoGithub() {
   return (

@@ -1,24 +1,24 @@
-"use client"
+'use client'
 
-import * as React from "react"
-import { DropdownMenuTriggerProps } from "@radix-ui/react-dropdown-menu"
-import { CheckIcon, CopyIcon } from "@radix-ui/react-icons"
-import { NpmCommands } from "@/types/unist"
+import * as React from 'react'
+import { DropdownMenuTriggerProps } from '@radix-ui/react-dropdown-menu'
+import { CheckIcon, CopyIcon } from '@radix-ui/react-icons'
+import { NpmCommands } from '@/types/unist'
 
-import { Event, trackEvent } from "@/lib/events"
-import { cn } from "@/lib/utils"
-import { Button } from "@/registry/new-york/ui/button"
+import { Event, trackEvent } from '@/lib/events'
+import { cn } from '@/lib/utils'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/registry/new-york/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu'
 
 interface CopyButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   value: string
   src?: string
-  event?: Event["name"]
+  event?: Event['name']
 }
 
 export async function copyToClipboardWithMeta(value: string, event?: Event) {
@@ -48,8 +48,8 @@ export function CopyButton({
       size="icon"
       variant="ghost"
       className={cn(
-        "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-        className
+        'relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50',
+        className,
       )}
       onClick={() => {
         copyToClipboardWithMeta(
@@ -61,7 +61,7 @@ export function CopyButton({
                   code: value,
                 },
               }
-            : undefined
+            : undefined,
         )
         setHasCopied(true)
       }}
@@ -109,8 +109,8 @@ export function CopyWithClassNames({
           size="icon"
           variant="ghost"
           className={cn(
-            "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-            className
+            'relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50',
+            className,
           )}
         >
           {hasCopied ? (
@@ -151,9 +151,9 @@ export function CopyNpmCommandButton({
   }, [hasCopied])
 
   const copyCommand = React.useCallback(
-    (value: string, pm: "npm" | "pnpm" | "yarn" | "bun") => {
+    (value: string, pm: 'npm' | 'pnpm' | 'yarn' | 'bun') => {
       copyToClipboardWithMeta(value, {
-        name: "copy_npm_command",
+        name: 'copy_npm_command',
         properties: {
           command: value,
           pm,
@@ -161,7 +161,7 @@ export function CopyNpmCommandButton({
       })
       setHasCopied(true)
     },
-    []
+    [],
   )
 
   return (
@@ -171,8 +171,8 @@ export function CopyNpmCommandButton({
           size="icon"
           variant="ghost"
           className={cn(
-            "relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50",
-            className
+            'relative z-10 h-6 w-6 text-zinc-50 hover:bg-zinc-700 hover:text-zinc-50',
+            className,
           )}
         >
           {hasCopied ? (
@@ -185,22 +185,22 @@ export function CopyNpmCommandButton({
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem
-          onClick={() => copyCommand(commands.__npmCommand__, "npm")}
+          onClick={() => copyCommand(commands.__npmCommand__, 'npm')}
         >
           npm
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => copyCommand(commands.__yarnCommand__, "yarn")}
+          onClick={() => copyCommand(commands.__yarnCommand__, 'yarn')}
         >
           yarn
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => copyCommand(commands.__pnpmCommand__, "pnpm")}
+          onClick={() => copyCommand(commands.__pnpmCommand__, 'pnpm')}
         >
           pnpm
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => copyCommand(commands.__bunCommand__, "bun")}
+          onClick={() => copyCommand(commands.__bunCommand__, 'bun')}
         >
           bun
         </DropdownMenuItem>

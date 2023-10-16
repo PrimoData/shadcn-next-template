@@ -1,17 +1,17 @@
-import "@/styles/globals.css"
-import { Metadata } from "next"
+import '@/styles/globals.css'
+import { Metadata } from 'next'
 
-import { siteConfig } from "@/config/site"
-import { fontSans } from "@/lib/fonts"
-import { cn } from "@/lib/utils"
-import { Analytics } from "@/components/analytics"
-import { ThemeProvider } from "@/components/providers"
-import { SiteFooter } from "@/components/site-footer"
-import { SiteHeader } from "@/components/site-header"
-import { TailwindIndicator } from "@/components/tailwind-indicator"
-import { ThemeSwitcher } from "@/components/theme-switcher"
-import { Toaster as DefaultToaster } from "@/registry/default/ui/toaster"
-import { Toaster as NewYorkToaster } from "@/registry/new-york/ui/toaster"
+import { siteConfig } from '@/config/site'
+import { fontSans } from '@/lib/fonts'
+import { cn } from '@/lib/utils'
+import { Analytics } from '@/components/analytics'
+import { ThemeProvider } from '@/components/providers'
+import { SiteFooter } from '@/components/site-footer'
+import { SiteHeader } from '@/components/site-header'
+import { TailwindIndicator } from '@/components/tailwind-indicator'
+import { ThemeSwitcher } from '@/components/theme-switcher'
+import { Toaster as DefaultToaster } from '@/components/default/toaster'
+import { Toaster as NewYorkToaster } from '@/components/ui/toaster'
 
 export const metadata: Metadata = {
   title: {
@@ -20,26 +20,26 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    "Next.js",
-    "React",
-    "Tailwind CSS",
-    "Server Components",
-    "Radix UI",
+    'Next.js',
+    'React',
+    'Tailwind CSS',
+    'Server Components',
+    'Radix UI',
   ],
   authors: [
     {
-      name: "shadcn",
-      url: "https://shadcn.com",
+      name: 'shadcn',
+      url: 'https://shadcn.com',
     },
   ],
-  creator: "shadcn",
+  creator: 'shadcn',
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
   openGraph: {
-    type: "website",
-    locale: "en_US",
+    type: 'website',
+    locale: 'en_US',
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -54,16 +54,16 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: 'summary_large_image',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: "@shadcn",
+    creator: '@shadcn',
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 }
@@ -79,8 +79,8 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <head />
         <body
           className={cn(
-            "container min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
+            'container min-h-screen bg-background font-sans antialiased',
+            fontSans.variable,
           )}
         >
           <ThemeProvider
